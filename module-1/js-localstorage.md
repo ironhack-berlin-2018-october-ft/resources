@@ -73,3 +73,5 @@ Source code: https://codepen.io/maxencebouret/pen/mjZRWj
 **Iteration 2**: Save the 5 best scores and display it on the "home" screen
 
 **Iteration 3**: Ask for the username when a game is over and display the 5 best scores with the username
+
+Solutin code: https://codepen.io/maxencebouret/pen/oMrGaY?editors=0010
