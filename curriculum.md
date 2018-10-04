@@ -1,9 +1,15 @@
-# Curriculum
+![Ironhack Logo](https://i.imgur.com/uYvaMH6.png)
 
-## Week 1
+# Curriculum
 
-### Monday
+On this page, you will find all the changes on the curriculum here.
+
+
+**In construction**
+<!-- ## Week 1
+
+### Monday
 
 - Learning Unit 1
 - Learning Unit 2
-- PP
+- PP -->
