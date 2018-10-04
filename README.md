@@ -1,6 +1,15 @@
 ![Ironhack Logo](https://i.imgur.com/1QgrNNw.png)
 
-# Ironhack Booklet
+# Bootcamp Resources
+
+## Goal
+
+The goal of this page is to share good resources with the class .
+
+## Ironhack links
+
+- [Learn Platform](http://learn.ironhack.com)
+- Projects 1
 
 ## Online tools
 
