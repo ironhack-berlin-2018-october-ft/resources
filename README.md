@@ -26,7 +26,7 @@ The goal of this page is to share good resources with the class.
 
 ### Survey
 - **Weekly Survey**: To fill every week (coming soon)
-- [Anonymous Survey](https://sayat.me/mc100s) 
+<!-- - [Anonymous Survey](https://sayat.me/mc100s)  -->
 
 
 ## External resources
@@ -35,6 +35,7 @@ The goal of this page is to share good resources with the class.
 - [regex101.com](https://regex101.com/): Website to test and understand Regular expressions
 - [A guide to flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/): The Flexbox Bible
 - [getbootstrap.com](http://getbootstrap.com): The Bootstrap documentation
+- [W3schools CSS Selectors ](https://www.w3schools.com/cssref/css_selectors.asp): Cheatsheet for CSS selectors
 
 ### Software
 - [Photopea](https://photopea.com): Online Free Photoshop
