@@ -13,6 +13,7 @@ The goal of this page is to share good resources with the class.
 - **[Berlin Curriculum](./curriculum.md)** => This page will be updated often
 - [Ironhack Berlin 2018 October Full-Time GitHub page](https://github.com/orgs/ironhack-berlin-2018-october-ft/): To find all the repositories
 - [Visual Studio Tips](./visualstudio.md)
+- [Morning challenges](https://repl.it/@MaxenceBouret/morning-challenge-october)
 
 
 ### Projects
