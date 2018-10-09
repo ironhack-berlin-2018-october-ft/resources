@@ -3,7 +3,7 @@
 ## How to launch it?
 
 ```
-$ git clone ...
+$ git clone https://github.com/ironhack-berlin-2018-october-ft/resources.git
 $ cd resources/exercises/css-positioning
 $ code .
 ```
