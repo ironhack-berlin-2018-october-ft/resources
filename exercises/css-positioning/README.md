@@ -4,7 +4,7 @@
 
 ```
 $ git clone ...
-$ cd booklet/exercises/css-positioning
+$ cd resources/exercises/css-positioning
 $ code .
 ```
 
