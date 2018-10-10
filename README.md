@@ -60,3 +60,23 @@ The goal of this page is to share good resources with the class.
 #### Day 3
 - Exercise: [CSS Selectors](https://codepen.io/pen/?editors=1100#)
 
+
+
+## FAQ
+
+### How to kill a server (for example on PORT 5500)?
+
+First you need to run the following command, that will give you the list of process using the port.
+```sh
+$ lsof -wni tcp:5500
+# Answer 
+# COMMAND     PID          USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+# Code\x20H 28289 maxencebouret   45u  IPv4 0xa9b05c1a28ae649b      0t0  TCP *:fcp-addr-srvr1 (LISTEN)
+```
+
+Then you you need to find the **PID** (here it's `28289`) and launch the following command:
+```sh
+$ kill -9 28289
+```
+
+
