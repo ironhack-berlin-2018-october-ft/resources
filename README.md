@@ -56,10 +56,11 @@ The goal of this page is to share good resources with the class.
 - Exercise: [CSS Positioning](./exercises/css-positioning/README.md)
 - Exercise: [Flexbox Froggy](https://flexboxfroggy.com)
 
-
 #### Day 3
-- Exercise: [CSS Selectors](https://codepen.io/pen/?editors=1100#)
+- Exercise: [CSS Transitions](https://codepen.io/maxencebouret/pen/NOjKga?editors=1100)
 
+#### Day 4
+- Exercise: [Flexbox exercise](https://codepen.io/maxencebouret/pen/QZgvdp?editors=1100)
 
 
 ## FAQ
