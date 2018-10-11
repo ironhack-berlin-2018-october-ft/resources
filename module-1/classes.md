@@ -1,6 +1,6 @@
 # Classes
 
-## ES6
+## ES6 Syntax
 
 ### Constructor
 
