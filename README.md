@@ -62,6 +62,9 @@ The goal of this page is to share good resources with the class.
 #### Day 4
 - Exercise: [Flexbox exercise](https://codepen.io/maxencebouret/pen/QZgvdp?editors=1100)
 
+#### Day 5
+- Course: [Class syntax (ES5 and ES6)](./module-1/classes.md)
+- Pair Programming: [Lab JavaScript Vikings](https://github.com/ironhack-berlin-2018-october-ft/lab-javascript-vikings)
 
 ## FAQ
 
