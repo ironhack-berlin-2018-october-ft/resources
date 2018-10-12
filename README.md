@@ -65,6 +65,7 @@ The goal of this page is to share good resources with the class.
 #### Day 5
 - Course: [Class syntax (ES5 and ES6)](./module-1/classes.md)
 - Pair Programming: [Lab JavaScript Vikings](https://github.com/ironhack-berlin-2018-october-ft/lab-javascript-vikings)
+- Example in class: [JavaScript DOM Manipulation](https://github.com/ironhack-berlin-2018-october-ft/w1-friday-dom-manipulation)
 
 ## FAQ
 
