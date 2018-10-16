@@ -24,7 +24,7 @@ The goal of this page is to share good resources with the class.
 
 
 ### Survey
-- **Weekly Survey**: To fill every week (coming soon)
+- [**Weekly Survey**](https://goo.gl/forms/nMvgsTMOGUahZWk42) (To fill every week)
 <!-- - [Anonymous Survey](https://sayat.me/mc100s)  -->
 
 
