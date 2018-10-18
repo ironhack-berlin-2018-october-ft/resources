@@ -15,11 +15,11 @@ The goal of this page is to share good resources with the class.
 
 
 ### Projects
-- Project 1 rule (in construction)
+- **[Project 1 guidelines](https://docs.google.com/presentation/d/17PPiYmF8CzFx-x980UMPx-jsUJPmTj67HVJWo96OHKg/edit?usp=sharing)**
 - Project 1 list (in construction)
-- Project 2 rule (in construction)
+- Project 2 guidelines (in construction)
 - Project 2 list (in construction)
-- Project 3 rule (in construction)
+- Project 3 guidelines (in construction)
 - Project 3 list (in construction)
 
 
