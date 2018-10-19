@@ -67,6 +67,13 @@ The goal of this page is to share good resources with the class.
 - Pair Programming: [Lab JavaScript Vikings](https://github.com/ironhack-berlin-2018-october-ft/lab-javascript-vikings)
 - Example in class: [JavaScript DOM Manipulation](https://github.com/ironhack-berlin-2018-october-ft/w1-friday-dom-manipulation)
 
+
+### Week 2
+
+#### Day 4
+- [Canvas Cheatsheet](./module-1/canvas.md)
+
+
 ## FAQ
 
 ### How to kill a server (for example on PORT 5500)?
