@@ -35,6 +35,7 @@ The goal of this page is to share good resources with the class.
 - [A guide to flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/): The Flexbox Bible
 - [getbootstrap.com](http://getbootstrap.com): The Bootstrap documentation
 - [W3schools CSS Selectors ](https://www.w3schools.com/cssref/css_selectors.asp): Cheatsheet for CSS selectors
+- [Making Sprite-based Games with Canvas](https://github.com/jlongster/canvas-game-bootstrap/blob/master/tutorial.md)
 
 ### Software
 - [Photopea](https://photopea.com): Online Free Photoshop
