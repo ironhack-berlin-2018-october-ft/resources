@@ -44,7 +44,7 @@ The goal of this page is to share good resources with the class.
 - [Unsplash](http://unsplash.com): Website with free good pictures (with an API)
 - [Flaticon](http://flaticon.com): Website to find nice icons
 - [OpenGameArt.org](https://opengameart.org): Website to get game picture resources
-
+- [Coolors](https://coolors.co): A super fast color schemes generator
 
 ## Berlin Extra Curriculum
 
