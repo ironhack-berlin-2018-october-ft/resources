@@ -16,11 +16,11 @@ The goal of this page is to share good resources with the class.
 
 ### Projects
 - **[Project 1 guidelines](https://docs.google.com/presentation/d/17PPiYmF8CzFx-x980UMPx-jsUJPmTj67HVJWo96OHKg/edit?usp=sharing)**
-- Project 1 list (in construction)
-- Project 2 guidelines (in construction)
-- Project 2 list (in construction)
-- Project 3 guidelines (in construction)
-- Project 3 list (in construction)
+- **[Project 1 list](https://docs.google.com/spreadsheets/d/1ik82xwJmrkLMWMQip2Q3yXl3pTu69z5zxHMtPdoXd80/edit?usp=sharing)**
+- Project 2 guidelines (coming soon)
+- Project 2 list (coming soon)
+- Project 3 guidelines (coming soon)
+- Project 3 list (coming soon)
 
 
 ### Survey
