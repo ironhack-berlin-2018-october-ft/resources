@@ -75,6 +75,11 @@ The goal of this page is to share good resources with the class.
 #### Day 4
 - [Canvas Cheatsheet](./module-1/canvas.md)
 
+### Week 4
+
+#### Day 3
+- No need to understand the concept of partial
+- [Daily Exercise without partial](https://github.com/ironhack-berlin-2018-october-ft/lab-ironbeers)
 
 ## FAQ
 
