@@ -83,7 +83,9 @@ The goal of this page is to share good resources with the class.
 
 ## FAQ
 
-### How to kill a server (for example on PORT 5500)?
+### General
+
+#### How to kill a server (for example on PORT 5500)?
 
 First you need to run the following command, that will give you the list of process using the port.
 ```sh
@@ -98,4 +100,11 @@ Then you you need to find the **PID** (here it's `28289`) and launch the followi
 $ kill -9 28289
 ```
 
+### Backend
 
+#### `Error: Cannot find module 'express'`
+
+Your packahe is not installed. You need to do the following command at the root of your project (where you have the `package.json`): 
+```sh
+$ npm install express
+```
