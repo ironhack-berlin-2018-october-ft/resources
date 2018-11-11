@@ -82,6 +82,13 @@ The goal of this page is to share good resources with the class.
 - No need to understand the concept of partial
 - [Daily Exercise without partial](https://github.com/ironhack-berlin-2018-october-ft/lab-ironbeers)
 
+
+### Week 5
+
+#### Day 2
+- [Mapbox intro](https://github.com/ironhack-berlin-2018-october-ft/mapbox-intro)
+
+
 ## FAQ
 
 ### General
