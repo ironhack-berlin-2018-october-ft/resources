@@ -1,5 +1,18 @@
 # React Summary
 
+- [Resources](#resources)
+- [How to use React](#how-to-use-react)
+- [Hello React](#hello-react)
+- [JSX](#jsx)
+- [React Components and Props](#react-components-and-props)
+- [React State](#react-state)
+- [React Lifecycle](#react-lifecycle)
+- [React and Conditional Rendering](#react-and-conditional-rendering)
+- [React Lists and Keys](#react-lists-and-keys)
+- [React Forms](#react-forms)
+
+
+
 ## Resources
 - [React Official Documentation](https://reactjs.org/): They have a good [tutorial](https://reactjs.org/docs/hello-world.html), [advanced guides](https://reactjs.org/docs/jsx-in-depth.html) and [API Reference (list of all methods)](https://reactjs.org/docs/react-api.html)
 - [React Router Offical Documentation](https://reacttraining.com/react-router/web/guides/)
@@ -196,7 +209,7 @@ ReactDOM.render(
 </div>
 ```
 
-## State
+## React State
 
 A class component can have a state. Every time the state is changed, it re-renders the component.
 
@@ -251,7 +264,7 @@ ReactDOM.render(
 )
 ```
 
-## Lifecycle
+## React Lifecycle
 
 [![image](https://user-images.githubusercontent.com/5306791/48663701-41838d80-ea94-11e8-8807-0271701fe28f.png)](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
@@ -356,3 +369,32 @@ ReactDOM.render(
   document.getElementById('root')
 )
 ```
+
+
+
+## React and Conditional Rendering
+
+
+
+
+
+
+
+
+## React Lists and Keys
+
+
+
+
+
+
+
+
+## React Forms
+
+
+
+
+
+
+
