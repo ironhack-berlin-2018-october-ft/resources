@@ -89,6 +89,12 @@ The goal of this page is to share good resources with the class.
 - [Mapbox intro](https://github.com/ironhack-berlin-2018-october-ft/mapbox-intro)
 
 
+### Week 6
+
+- [React Summary](./module-3/react-summary.md)
+
+
+
 ## FAQ
 
 ### General
