@@ -76,23 +76,23 @@ A JSX will be always wrap in 1 tag, opened and closed.
 ```js
 // Syntax error, 2 children
 const wrongElement = (
-  <section>1st section</section>
-  <section>2st section</section>
+  <section>first section</section>
+  <section>second section</section>
 )
 
 // No syntax error, everything is wrapped by "<div>"
 const rightElement1 = (
   <div>
-    <section>1st section</section>
-    <section>2st section</section>
+    <section>first section</section>
+    <section>second section</section>
   </div>
 )
 
 // No syntax error, everything is wrapped by "<React.Fragment>", that is invisible in the DOM
 const rightElement2 = (
   <React.Fragment>
-    <section>1st section</section>
-    <section>2st section</section>
+    <section>first section</section>
+    <section>second section</section>
   </React.Fragment>
 )
 
