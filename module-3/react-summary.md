@@ -668,8 +668,6 @@ handleSubmit = (event) => {
 
 **Full example of a component that display a list of characters and let the user add some.** Be careful, it's a shared API ;)
 
-**Basic Example with 1 input**
-
 ```js
 // Don't import in Codepen, add a CDN in the settings instead
 import axios from 'axios'
@@ -778,7 +776,7 @@ ReactDOM.render(
 
 ### Installation
 ```
-npm install --save react-router-dom
+$ npm install react-router-dom
 ```
 
 ### Import
@@ -859,7 +857,7 @@ Property | Type | Description
 
 ### Installation 
 ```
-npm install --save axios
+$ npm install axios
 ```
 
 ```javascript
@@ -950,10 +948,10 @@ export default axios.create({
 
 ```javascript
 // src/index.js
-import API from './api';
+import api from './api';
 
 // ...
-API.delete(`users/${this.state.id}`)
+api.delete(`users/${this.state.id}`)
   .then(res => {
     console.log(res);
     console.log(res.data);
