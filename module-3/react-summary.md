@@ -11,6 +11,21 @@
 - [React and Conditional Rendering](#react-and-conditional-rendering)
 - [React Lists and Keys](#react-lists-and-keys)
 - [React Forms](#react-forms)
+- [React Router](#react-router)
+- [Using Axios with React](#using-axios-with-react)
+- [Coming soon](#coming-soon)
+
+Resources
+How to use React?
+[Hello React](https://reactjs.org/docs/hello-world.html)
+[JSX](https://reactjs.org/docs/introducing-jsx.html)
+[React Components and Props](https://reactjs.org/docs/components-and-props.html)
+[React State](https://reactjs.org/docs/state-and-lifecycle.html)
+React Lifecycle
+[React and Events](https://reactjs.org/docs/handling-events.html)
+[React and Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
+[React Lists and Keys](https://reactjs.org/docs/lists-and-keys.html)
+[React Forms](https://reactjs.org/docs/forms.html)
 
 
 
@@ -30,14 +45,34 @@ If you want something very quick to use, very close to what you can have with VS
 ### With `create-react-app` 
 Or you can create a React application with your terminal:
 
-```
+```sh
+# Only the first time 
 $ npm install -g create-react-app
+
+# To create a new React app
 $ create-react-app my-app
 $ cd my-app
-$ npm start
+
+# To start the React app
+$ npm start # or yarn start
 ```
 
-## Hello React
+Then you have the following architecture:
+- **`node_modules/`**
+- **`public/`**: All the files here are accessible by the user
+  - `index.html`: The HTML page displayed
+- **`src/`**: All the React code
+  - `App.css`
+  - `App.js`
+  - `App.test.js`
+  - `index.css`
+  - `index.js`: The main file
+  - `logo.svg`
+  - `serviceWorker.js`
+- `.gitignore`
+- `package.json`
+
+## [Hello React](https://reactjs.org/docs/hello-world.html)
 
 The minimum code you need for React
 
@@ -77,7 +112,7 @@ Page rendered (Chrome inspector):
 </html>
 ```
 
-## JSX
+## [JSX](https://reactjs.org/docs/introducing-jsx.html)
 
 JSX is a syntax extension to JavaScript. 
 
@@ -158,7 +193,7 @@ const element6 = <ul>{numbers.map((number,i) => <li key={i}>{number}</li>)}</ul>
 ```
 
 
-## React Components and Props
+## [React Components and Props](https://reactjs.org/docs/components-and-props.html)
 
 A detailed component API reference is available [here](https://reactjs.org/docs/react-component.html).
 
@@ -206,7 +241,7 @@ ReactDOM.render(
 </div>
 ```
 
-## React State
+## [React State](https://reactjs.org/docs/state-and-lifecycle.html)
 
 A class component can have a state. Every time the state is changed, it re-renders the component.
 
@@ -368,42 +403,7 @@ ReactDOM.render(
 ```
 
 
-
-## React and Conditional Rendering
-
-```js
-// Component that display a login or logout button based on this.props.isLoggedIn
-class MyComponent extends React.Component {
-  showButton() {
-    if (this.props.isLoggedIn)
-      return <LogoutButton />
-    else 
-      return <LoginButton />
-  }
-  render() {
-    let button
-    if (this.props.isLoggedIn)
-      button = <LogoutButton />
-    else 
-      button = <LoginButton />
-    return (
-      <div>
-        {/********** Method 1: Variable **********/}
-        {button}
-        {/********** Method 2: Function **********/}
-        {this.showButton()}
-        {/********** Method 3: Ternary **********/}
-        {this.props.isLoggedIn ? <LogoutButton /> : <LoginButton />}
-        {/********** Method 4: Inline If with Logical && Operator **********/}
-        {this.props.isLoggedIn && <LogoutButton />}        
-        {!this.props.isLoggedIn && <LoginButton />}        
-      </div>
-    )
-  }
-}
-```
-
-## React and Events
+## [React and Events](https://reactjs.org/docs/handling-events.html)
 
 Handling events with React elements is very similar to handling events on DOM elements. There are some syntactic differences:
 
@@ -553,11 +553,47 @@ class LikeButton extends React.Component {
     )
   }
 }
-
 ```
 
 
-## React Lists and Keys
+
+
+## [React and Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
+
+```js
+// Component that display a login or logout button based on this.props.isLoggedIn
+class MyComponent extends React.Component {
+  showButton() {
+    if (this.props.isLoggedIn)
+      return <LogoutButton />
+    else 
+      return <LoginButton />
+  }
+  render() {
+    let button
+    if (this.props.isLoggedIn)
+      button = <LogoutButton />
+    else 
+      button = <LoginButton />
+    return (
+      <div>
+        {/********** Method 1: Variable **********/}
+        {button}
+        {/********** Method 2: Function **********/}
+        {this.showButton()}
+        {/********** Method 3: Ternary **********/}
+        {this.props.isLoggedIn ? <LogoutButton /> : <LoginButton />}
+        {/********** Method 4: Inline If with Logical && Operator **********/}
+        {this.props.isLoggedIn && <LogoutButton />}        
+        {!this.props.isLoggedIn && <LoginButton />}        
+      </div>
+    )
+  }
+}
+```
+
+
+## [React Lists and Keys](https://reactjs.org/docs/lists-and-keys.html)
 
 ```js
 const students = ['Alice', 'Bob', 'Charly', 'David']
@@ -594,49 +630,161 @@ class MyComponent extends React.Component {
 
 ## [React Forms](https://reactjs.org/docs/forms.html)
 
-When we use forms in React, we can use the following methodology.
+When we use forms in React, we generally follow this methodology.
 
-First, for each items on the form (`<input />`, `<textarea />` and `<select></select>`), we set a property `value`(generally with a state) and a property `onChange`. Examples:
-- .......................................
+First, for each items on the form (`<input />`, `<textarea />` and `<select></select>`), we set a property `value`(generally with a state) and a property `onChange`. 
+
+**Example**:
+
+```js
+// Component method
+handleChange = (event) => {
+  this.setState({[event.target.name]: event.target.value});
+}
+```
+
+```js
+// Some code in the render
+
+{/* This input display "this.state.name" and update this value on change  */}
+<input type="text" name="name" value={this.state.name} onChange={this.handleChange} /> 
+
+{/* This textarea display "this.state.occupation" and update this value on change  */}
+<textarea name="occupation" value={this.state.occupation} onChange={this.handleChange} /> 
+
+{/* This select display "this.state.debt" and update this value on change  */}
+<select name="debt" value={this.state.debt} onChange={this.handleChange}>
+  <option value={true}>Yes</option>
+  <option value={false}>No</option>
+</select>
+```
+
+Then, we need to listen at the form submission, with `onSubmit`.
 
 
-When we use forms in React, we use 2 main event listener.
+**Example**:
+```js
+handleSubmit = (event) => {
+  event.preventDefault() // To avoid going to the action page of the form
 
-The first event is **`onChange`**, used with .
+  // The code to be executed when the user submit the form (click on a button)
+}
+```
+
+```js
+// Some code in the render
+
+<form onSubmit={this.handleSubmit}>
+  {/* ... */}
+</form>
+```
+
+**Full example of a component that display a list of characters and let the user add some.** Be careful, it's a shared API ;)
 
 **Basic Example with 1 input**
 
-```javascript
-class NameForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
+```js
+// Don't import in Codepen, add a CDN in the settings instead
+import axios from 'axios'
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      characters: [],
+      name: '', // Default value for the form
+      occupation: '', // Default value for the form
+      debt: false, // Default value for the form
+      weapon: '' // Default value for the form
+    }
   }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value // the value of the input
+    })
   }
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+  handleSubmit = (event) => {
     event.preventDefault();
+    const character = {
+      name: this.state.name,
+      occupation: this.state.occupation,
+      debt: this.state.debt,
+      weapon: this.state.weapon,
+    };
+    axios.post('https://ih-crud-api.herokuapp.com/characters', character)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
   }
-
+  handleClick = () => {
+    this.setState({ characters: [] })
+    axios.get('https://ih-crud-api.herokuapp.com/characters')
+      .then(response => {
+        this.setState({
+          characters: response.data
+        })
+      })
+  }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-    );
+      <div>
+        <h2>Add a character</h2>
+        <form onSubmit={this.handleSubmit}>
+          Name: 
+          <input type="text" name="name" value={this.state.name} onChange={this.handleChange} /> 
+          <br />
+          
+          Occupation: 
+          <textarea name="occupation" value={this.state.occupation} onChange={this.handleChange} /> 
+          <br />
+          
+          Debt: 
+          <select name="debt" value={this.state.debt} onChange={this.handleChange}>
+            <option value={true}>Yes</option>
+            <option value={false}>No</option>
+          </select>
+          <br />
+          
+          Weapon: 
+          <input type="text" name="weapon" value={this.state.weapon} onChange={this.handleChange} /> 
+          <br />
+          
+          <button type="submit">Add</button>
+        </form>
+        
+        <h2>Display all characters</h2>
+        <button onClick={this.handleClick}>Display the characters from the API</button> 
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Occupation</th>
+              <th>Debt</th>
+              <th>Weapon</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.characters.map(c => (
+              <tr>
+                <td>{c.name}</td>
+                <td>{c.occupation}</td>
+                <td>{c.debt ? 'Yes' : 'No'}</td>
+                <td>{c.weapon}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    )
   }
 }
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+)
 ```
 
 ## React Router
@@ -828,6 +976,7 @@ API.delete(`users/${this.state.id}`)
 
 
 ## Coming soon
+- Inline styling
 - Reactstrap (React + Bootstrap)
 - Mapbox and React
 - React and SCSS
