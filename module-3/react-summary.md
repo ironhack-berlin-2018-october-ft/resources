@@ -15,19 +15,6 @@
 - [Using Axios with React](#using-axios-with-react)
 - [Coming soon](#coming-soon)
 
-Resources
-How to use React?
-[Hello React](https://reactjs.org/docs/hello-world.html)
-[JSX](https://reactjs.org/docs/introducing-jsx.html)
-[React Components and Props](https://reactjs.org/docs/components-and-props.html)
-[React State](https://reactjs.org/docs/state-and-lifecycle.html)
-React Lifecycle
-[React and Events](https://reactjs.org/docs/handling-events.html)
-[React and Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
-[React Lists and Keys](https://reactjs.org/docs/lists-and-keys.html)
-[React Forms](https://reactjs.org/docs/forms.html)
-
-
 
 ## Resources
 - [React Official Documentation](https://reactjs.org/): They have a good [tutorial](https://reactjs.org/docs/hello-world.html), [advanced guides](https://reactjs.org/docs/jsx-in-depth.html) and [API Reference (list of all methods)](https://reactjs.org/docs/react-api.html)
