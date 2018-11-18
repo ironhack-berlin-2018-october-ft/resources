@@ -1,12 +1,13 @@
 # React Summary
 
 - [Resources](#resources)
-- [How to use React](#how-to-use-react)
+- [How to use React?](#how-to-use-react)
 - [Hello React](#hello-react)
 - [JSX](#jsx)
 - [React Components and Props](#react-components-and-props)
 - [React State](#react-state)
 - [React Lifecycle](#react-lifecycle)
+- [React and Events](#react-and-events)
 - [React and Conditional Rendering](#react-and-conditional-rendering)
 - [React Lists and Keys](#react-lists-and-keys)
 - [React Forms](#react-forms)
@@ -154,10 +155,6 @@ const element6 = <ul>{numbers.map((number,i) => <li key={i}>{number}</li>)}</ul>
 //                 <li>8</li>
 //                 <li>16</li>
 //               </ul>
-
-const element = <div></div>
-const element = <div></div>
-const element = <div></div>
 ```
 
 
@@ -273,9 +270,9 @@ ReactDOM.render(
 ### Mounting
 
 These methods are called in the following order when an instance of a component is being created and inserted into the DOM
-- [`constructor()`](https://reactjs.org/docs/react-component.html#constructor)
+- [`constructor()`](https://reactjs.org/docs/react-component.html#constructor): Must start with `super(props)`; Perfect to initialize the state and bind methods.
 - [`render()`](https://reactjs.org/docs/react-component.html#render)
-- [`componentDidMount()`](https://reactjs.org/docs/react-component.html#componentdidmount)
+- [`componentDidMount()`](https://reactjs.org/docs/react-component.html#componentdidmount): Perfect place to call APIs and set up any subscriptions. 
 
 ### Updating
 
@@ -374,27 +371,466 @@ ReactDOM.render(
 
 ## React and Conditional Rendering
 
+```js
+// Component that display a login or logout button based on this.props.isLoggedIn
+class MyComponent extends React.Component {
+  showButton() {
+    if (this.props.isLoggedIn)
+      return <LogoutButton />
+    else 
+      return <LoginButton />
+  }
+  render() {
+    let button
+    if (this.props.isLoggedIn)
+      button = <LogoutButton />
+    else 
+      button = <LoginButton />
+    return (
+      <div>
+        {/********** Method 1: Variable **********/}
+        {button}
+        {/********** Method 2: Function **********/}
+        {this.showButton()}
+        {/********** Method 3: Ternary **********/}
+        {this.props.isLoggedIn ? <LogoutButton /> : <LoginButton />}
+        {/********** Method 4: Inline If with Logical && Operator **********/}
+        {this.props.isLoggedIn && <LogoutButton />}        
+        {!this.props.isLoggedIn && <LoginButton />}        
+      </div>
+    )
+  }
+}
+```
+
+## React and Events
+
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntactic differences:
+
+- React events are named using camelCase
+- With JSX you pass a function as the event handler
+
+**Examples**
+
+```js
+function alertTheAnswer() {
+  alert(42)
+}
+
+{/* These 3 buttons are the same and display 42 on click */}
+
+<button onClick={() => alert(42)}>
+  What is the answer to life, the universe and everything? 
+</button>
+
+<button onClick={() => { alert(42) }}>
+  What is the answer to life, the universe and everything? 
+</button>
+
+<button onClick={alertTheAnswer}>
+  What is the answer to life, the universe and everything? 
+</button>
+```
 
 
+### [List of events](https://reactjs.org/docs/events.html)
+
+Event Types | Event Names | Event Properties
+-- | -- | --
+Clipboard Events | `onCopy` `onCut` `onPaste` | `clipboardData`
+Composition Events | `onCompositionEnd` `onCompositionStart` `onCompositionUpdate` | `data` 
+Keyboard Events | `onKeyDown` `onKeyPress` `onKeyUp` | `altKey` `charCode` `ctrlKey` `getModifierState(key)` `key` `keyCode` `locale` `location` `metaKey` `repeat` `shiftKey` `which` 
+Focus Events | `onFocus` `onBlur` | `relatedTarget` 
+Form Events | `onChange` `onInput` `onInvalid` `onSubmit` | 
+Mouse Events | `onClick` `onContextMenu` `onDoubleClick` `onDrag` `onDragEnd` `onDragEnter` `onDragExit` `onDragLeave` `onDragOver` `onDragStart` `onDrop` `onMouseDown` `onMouseEnter` `onMouseLeave` `onMouseMove` `onMouseOut` `onMouseOver` `onMouseUp` | `altKey` `button` `buttons` `clientX` `clientY` `ctrlKey` `getModifierState(key)` `metaKey` `pageX` `pageY` `relatedTarget` `screenX` `screenY` `shiftKey`
+Selection Events | `onSelect` | 
+Touch Events | `onTouchCancel` `onTouchEnd` `onTouchMove` `onTouchStart` | `altKey` `changedTouches` `ctrlKey` `getModifierState(key)` `metaKey` `shiftKey` `targetTouches` `touches` 
+UI Events | `onScroll` | `detail` `view` 
+Wheel Events | `onWheel` | `deltaMode` `deltaX` `deltaY` `deltaZ` 
+Media Events | `onAbort` `onCanPlay` `onCanPlayThrough` `onDurationChange` `onEmptied` `onEncrypted` `onEnded` `onError` `onLoadedData` `onLoadedMetadata` `onLoadStart` `onPause` `onPlay` `onPlaying` `onProgress` `onRateChange` `onSeeked` `onSeeking` `onStalled` `onSuspend` `onTimeUpdate` `onVolumeChange` `onWaiting` | 
+Image Events | `onLoad` `onError` | 
+Animation Events | `onAnimationStart` `onAnimationEnd` `onAnimationIteration` | `animationName` `pseudoElement` `elapsedTime` 
+Transition Events | `onTransitionEnd` | `propertyName` `pseudoElement` `elapsedTime` 
+Other Events | `onToggle` | 
 
 
+### Binding your method
 
+If you want to give a method to your event, you will probably need to bind your method.
+
+In the example below, that is component to display a button with the number of likes, you will find below 4 ways to bind a method `handleClick`.
+
+```js
+// Method 1: arrow function in "onClick"
+class LikeButton extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      nbOfLikes: 0
+    }
+  }
+  handleClick() {
+    this.setState({
+      nbOfLikes: this.state.nbOfLikes+1
+    })
+  }
+  render() {
+    return (
+      // The arrow function set the "this" definition
+      <button onClick={() => this.handleClick()}>
+        {this.state.nbOfLikes} likes
+      </button>
+    )
+  }
+}
+
+// Method 2: bind in "onClick"
+class LikeButton extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      nbOfLikes: 0
+    }
+  }
+  handleClick() {
+    this.setState({
+      nbOfLikes: this.state.nbOfLikes+1
+    })
+  }
+  render() {
+    return (
+      // "bind(this)" set the definition of this 
+      <button onClick={this.handleClick.bind(this)}>
+        {this.state.nbOfLikes} likes
+      </button>
+    )
+  }
+}
+
+// Method 3: bind in constructor
+class LikeButton extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      nbOfLikes: 0
+    }
+    // "bind" sets the definition of this
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick() {
+    this.setState({
+      nbOfLikes: this.state.nbOfLikes+1
+    })
+  }
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.nbOfLikes} likes
+      </button>
+    )
+  }
+}
+
+// Method 4: arrow function for the method
+class LikeButton extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      nbOfLikes: 0
+    }
+  }
+  // Arrow function for a method autobind this (experimental feature)
+  handleClick = () => {
+    this.setState({
+      nbOfLikes: this.state.nbOfLikes+1
+    })
+  }
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.nbOfLikes} likes
+      </button>
+    )
+  }
+}
+
+```
 
 
 ## React Lists and Keys
 
+```js
+const students = ['Alice', 'Bob', 'Charly', 'David']
+
+// Component that display a list of students
+class MyComponent extends React.Component {
+  showList() {
+    let list = []
+    for (let i = 0; i < students.length; i++) {
+      list.push(<li key={i}>{students[i]}</li>)
+    }
+    return list
+  }
+  render() {
+    let list = []
+    for (let i = 0; i < students.length; i++) {
+      list.push(<li key={i}>{students[i]}</li>)
+    }
+    return (
+      <ul>
+        {/********** Method 1: Variable **********/}
+        {list}
+        {/********** Method 2: Function **********/}
+        {this.showList()}
+        {/********** Method 3: Map **********/}
+        {students.map((student,i) => <li key={i}>{student}</li>)}
+      </ul>
+    )
+  }
+}
+```
 
 
 
+## [React Forms](https://reactjs.org/docs/forms.html)
+
+When we use forms in React, we can use the following methodology.
+
+First, for each items on the form (`<input />`, `<textarea />` and `<select></select>`), we set a property `value`(generally with a state) and a property `onChange`. Examples:
+- .......................................
 
 
+When we use forms in React, we use 2 main event listener.
+
+The first event is **`onChange`**, used with .
+
+**Basic Example with 1 input**
+
+```javascript
+class NameForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
+```
+
+## React Router
+
+### Installation
+```
+npm install --save react-router-dom
+```
+
+### Import
+
+```javascript
+import { BrowserRouter, Route, Link } from 'react-router-dom'
+```
+
+### React Router Components
+
+<table>
+  <tr>
+    <th> Component </th>
+    <th> Description </th>
+    <th width="30%"> Main Props </td>
+  </tr>
+  <tr>
+    <td><code>&lt;BrowserRouter&gt;</code></td>
+    <td>Router Component that should wrap your application</td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td><code>&lt;Route&gt;</code></td>
+    <td>When the url matches its props <code>path</code>, it renders its content</td>
+    <td>
+      <ul>
+        <li><code>path</code>: string</li>
+        <li><code>component</code>: Component</li>
+        <li><code>render</code>: func</li>
+        <li><code>exact</code>: bool</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>&lt;Switch&gt;</code></td>
+    <td>Group <code>&lt;Route&gt;</code> together and display maximum 1</td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <td><code>&lt;Link&gt;</code></td>
+    <td>Replace the <code>&lt;a&gt;</code> tag of HTML in React Router</td>
+    <td>
+      <ul>
+        <li><code>to</code>: string</li>
+        <li><code>to</code>: object</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><code>&lt;NavLink&gt;</code></td>
+    <td>A special version of the <code>&lt;Link&gt;</code> that will add styling attributes to the rendered element when it matches the current URL</td>
+    <td>
+      <ul>
+        <li><code>activeClassName</code>: string</li>
+        <li><code>activeStyle</code>: object</li>
+        <li><code>exact</code>: bool</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 
-## React Forms
+### `match`
+
+A component displayed with `<Route>` has access to `match` (as `this.props.match` or as `({ match }) => ()`) and it is an object containing the following properties:
+
+Property | Type | Description
+-- | -- | --
+`params`| bool | Key/value pairs parsed from the URL corresponding to the dynamic segments of the path
+`isExact`| bool | `true` if the entire URL was matched (no trailing characters)
+`path`| string | The path pattern used to match. Useful for building nested `<Route>`s
+`url`| string | The matched portion of the URL. Useful for building nested `<Link>`s
 
 
+## Using Axios with React
+
+### Installation 
+```
+npm install --save axios
+```
+
+```javascript
+import axios from 'axios'
+```
+
+### Example of GET request
+```javascript 
+class PersonList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      persons: []
+    }
+  }
+
+  componentDidMount() {
+    axios.get(`https://jsonplaceholder.typicode.com/users`)
+      .then(res => {
+        const persons = res.data;
+        this.setState({ persons });
+      })
+  }
+
+  render() {
+    return (
+      <ul>
+        { this.state.persons.map(person => <li>{person.name}</li>) }
+      </ul>
+    )
+  }
+}
+```
+
+### Example of POST request
+
+```javascript
+class PersonList extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      name: ''
+    }
+  }
+
+  handleChange(event) {
+    this.setState({ name: event.target.value });
+  }
+
+  handleSubmit(event) => {
+    event.preventDefault();
+    const user = {
+      name: this.state.name
+    };
+    axios.post(`https://jsonplaceholder.typicode.com/users`, { user })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+  }
+
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <label>
+            Person Name:
+            <input type="text" name="name" onChange={this.handleChange.bind(this)} />
+          </label>
+          <button type="submit">Add</button>
+        </form>
+      </div>
+    )
+  }
+}
+```
+
+### Base instance
+
+```javascript
+// src/api.js
+import axios from 'axios';
+
+export default axios.create({
+  baseURL: `http://jsonplaceholder.typicode.com/`
+});
+```
+
+```javascript
+// src/index.js
+import API from './api';
+
+// ...
+API.delete(`users/${this.state.id}`)
+  .then(res => {
+    console.log(res);
+    console.log(res.data);
+  })
+// ...
+```
 
 
-
+## Coming soon
+- Reactstrap (React + Bootstrap)
+- Mapbox and React
+- React and SCSS
+- Maybe Formik
 
 
