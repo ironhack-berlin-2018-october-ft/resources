@@ -228,6 +228,25 @@ ReactDOM.render(
 </div>
 ```
 
+There is one props special: `props.children`, explained in the following example:
+
+```js
+function MyComponent(props) {
+  return <div>{props.children}</div>
+}
+
+// In some other components
+// ...
+
+{/* It works */}
+<MyComponent children="My value" />
+
+{/* Recommanded syntax */}
+<MyComponent>My value</MyComponent>
+```
+
+A more complex example is available [here](https://codepen.io/maxencebouret/pen/yQzWoj). 
+
 ## [React State](https://reactjs.org/docs/state-and-lifecycle.html)
 
 A class component can have a state. Every time the state is changed, it re-renders the component.
