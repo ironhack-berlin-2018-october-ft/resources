@@ -23,7 +23,7 @@
 ## How to use React?
 
 ### With Codepen 
-To use React, you can either play on Codepen with this [Hello World React example on Codepen](https://codepen.io/pen?&editors=0010).
+To use React, you can either play on Codepen with this [Hello World React example on Codepen](https://reactjs.org/redirect-to-codepen/hello-world).
 
 ### With CodeSanbox
 
