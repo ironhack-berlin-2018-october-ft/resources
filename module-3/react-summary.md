@@ -302,6 +302,8 @@ ReactDOM.render(
 )
 ```
 
+Another example of a component with a state (`<Bomb initalN={100} />`) available [here](https://codepen.io/maxencebouret/pen/GwOKNo)
+
 ## React Lifecycle
 
 [![image](https://user-images.githubusercontent.com/5306791/48663701-41838d80-ea94-11e8-8807-0271701fe28f.png)](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
