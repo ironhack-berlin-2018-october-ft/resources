@@ -47,6 +47,11 @@ The goal of this page is to share good resources with the class.
 - [OpenGameArt.org](https://opengameart.org): Website to get game picture resources
 - [Coolors](https://coolors.co): A super fast color schemes generator
 
+### Inspiration
+
+- [Wappalyzer](https://www.wappalyzer.com)
+- [ProductHunt](https://producthunt.com)
+
 ## Berlin Extra Curriculum
 
 ### General
