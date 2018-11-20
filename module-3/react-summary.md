@@ -59,6 +59,51 @@ Then you have the following architecture:
 - `.gitignore`
 - `package.json`
 
+## VS Code extensions for React
+
+To have many useful shortcuts, you can install [ES7 React/Redux/GraphQL/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets).
+
+```js
+// Shortcut: imp→	
+import moduleName from 'module'
+
+// Shortcut: imn→	
+import 'module'
+
+// Shortcut: imd→	
+import { destructuredModule } from 'module'
+
+// Shortcut: exp→ (→ is TAB)
+export default moduleName
+
+// Shortcut: exd→
+export { destructuredModule } from 'module'
+
+// Shortcut: rcc→ (React Class Component)
+import React, { Component } from 'react'
+
+export default class Filename extends Component {
+  render() {
+    return (
+      <div>
+        $1
+      </div>
+    )
+  }
+}
+
+// Shortcut: rfc→ (React Function Component)
+import React from 'react'
+
+export default function Filename() {
+  return (
+    <div>
+      $1
+    </div>
+  )
+}
+```
+
 ## [Hello React](https://reactjs.org/docs/hello-world.html)
 
 The minimum code you need for React
