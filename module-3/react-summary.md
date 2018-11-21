@@ -840,7 +840,7 @@ ReactDOM.render(
 )
 ```
 
-## React Router
+## [React Router](https://reacttraining.com/react-router/web/guides/)
 
 ### Installation
 ```
@@ -850,7 +850,7 @@ $ npm install react-router-dom
 ### Import
 
 ```javascript
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom'
 ```
 
 ### React Router Components
@@ -906,6 +906,15 @@ import { BrowserRouter, Route, Link } from 'react-router-dom'
       </ul>
     </td>
   </tr>
+  <tr>
+    <td><code>&lt;Redirect&gt;</code></td>
+    <td>Will navigate to a new location</td>
+    <td>
+      <ul>
+        <li><code>to</code>: string</li>
+      </ul>
+    </td>
+  </tr>
 </table>
 
 
@@ -915,10 +924,132 @@ A component displayed with `<Route>` has access to `match` (as `this.props.match
 
 Property | Type | Description
 -- | -- | --
-`params`| bool | Key/value pairs parsed from the URL corresponding to the dynamic segments of the path
+**`params`**| object | Key/value pairs parsed from the URL corresponding to the dynamic segments of the path
 `isExact`| bool | `true` if the entire URL was matched (no trailing characters)
 `path`| string | The path pattern used to match. Useful for building nested `<Route>`s
 `url`| string | The matched portion of the URL. Useful for building nested `<Link>`s
+
+
+### The Minimum Website with `react-router-dom`
+
+First, we have to enable the routing in the React application with `<BrowserRouter>`
+```js
+// src/index.js
+
+// Many imports...
+// We import "BrowserRouter" and name it "Router"
+import { BrowserRouter as Router } from 'react-router-dom';
+
+// We need to wrap <App /> by <Router> to use routing inside it
+ReactDOM.render((
+  <Router>
+    <App />
+  </Router>
+), document.getElementById('root'));
+```
+
+Second, we have to set some routes, with `<Route />` (and `<Switch>`), generally in `App.js` (and sometimes in extra files).
+```js
+// src/components/App.js
+import React, { Component } from 'react';
+import Home from './components/Home';
+import About from './components/About';
+import MyNavbar from './components/Navbar';
+import { Switch, Route } from 'react-router-dom';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <MyNavbar />
+
+        {/* With <Switch>, maximum 1 route is executed */}
+        {/* The Home component will be displayed if the URL is exactly "/" */}
+        {/* The About component will be displayed if the URL starts with "/about" */}
+        {/* "404" will be rendered in any case (if the previous routes failed) */}
+        <Switch>
+          <Route exact path='/' component={Home}/>
+          <Route path='/about' component={About}/>
+          <Route render={() => <h1>404</h1>}/>
+        </Switch>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+Third, everytime we want to go to another page/URL, we never use `<a>` but `<Link>` or `<NavLink>`
+
+```js
+// src/components/Navbar.js
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+export default () => {
+  return (
+    <nav>
+      <ul>
+        {/* Add the class "bold" if the URL match the path (if nothing is precised, the default would be "active") */}
+        <li><NavLink exact to="/" activeClassName="bold">Home</NavLink></li>
+        <li><NavLink to="/about" activeClassName="bold">About</NavLink></li>
+      </ul>
+    </nav>
+  )
+}
+```
+
+```css
+/* src/index.css */
+.bold {
+  font-weight: bold;
+}
+```
+
+### How to create a route with some variable in the URL
+
+Let's say we want to be able to extract the end of the following URL:
+- http://localhost:3000/country/France
+- http://localhost:3000/country/Germany
+
+First, we have to create a `<Route>` with some pattern. Example:
+
+```js
+// Any component file, for example: src/components/App.js
+<Route path="/country/:countryName" component={CountryDetail}/>
+```
+
+Then, we can create the component. Example: 
+
+```js
+// src/components/CountryDetail.js
+import React, { Component } from 'react'
+
+export default class CountryDetail extends Component {
+  render() {
+    return (
+      <div>
+        {/* We can access the value with: this.props.match.params.countryName */}
+        Country: {this.props.match.params.countryName}
+      </div>
+    )
+  }
+}
+```
+
+Finally, we can have some link to this route. Example:
+```js
+// Any component file
+
+// In render
+let countries = ['France','Germany','Spain','Netherlands']
+return (
+  <div>
+    {countries.map(c => <Link key={c} to={c}>{c}</Link>)}
+  </div>
+)
+```
 
 
 ## Using Axios with React
@@ -934,12 +1065,25 @@ import axios from 'axios'
 
 ### Example of GET request
 ```javascript 
+// Display all users from the API
 class PersonList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      persons: []
+      persons: null // init to null
     }
+  }
+
+  render() {
+    // If state.persons is null, it means we don't have the data from the API yet
+    if (!this.state.persons) {
+      return <div>Loading...</div>
+    }
+    return (
+      <ul>
+        { this.state.persons.map(person => <li>{person.name}</li>) }
+      </ul>
+    )
   }
 
   componentDidMount() {
@@ -949,21 +1093,14 @@ class PersonList extends React.Component {
         this.setState({ persons });
       })
   }
-
-  render() {
-    return (
-      <ul>
-        { this.state.persons.map(person => <li>{person.name}</li>) }
-      </ul>
-    )
-  }
 }
 ```
 
 ### Example of POST request
 
 ```javascript
-class PersonList extends React.Component {
+// Add a person thanks to the API
+class AddPerson extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -972,7 +1109,7 @@ class PersonList extends React.Component {
   }
 
   handleChange(event) {
-    this.setState({ name: event.target.value });
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   handleSubmit(event) => {
@@ -982,8 +1119,9 @@ class PersonList extends React.Component {
     };
     axios.post(`https://jsonplaceholder.typicode.com/users`, { user })
       .then(res => {
-        console.log(res);
-        console.log(res.data);
+        console.log(res.data)
+        // Redirect to the Home page
+        this.props.history.push('/')
       })
   }
 
@@ -991,10 +1129,8 @@ class PersonList extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <label>
-            Person Name:
-            <input type="text" name="name" onChange={this.handleChange.bind(this)} />
-          </label>
+          Person Name:
+          <input type="text" name="name" onChange={this.handleChange.bind(this)} />
           <button type="submit">Add</button>
         </form>
       </div>
@@ -1006,12 +1142,49 @@ class PersonList extends React.Component {
 ### Base instance
 
 ```javascript
-// src/api.js
+// src/api.js (in the client folder)
 import axios from 'axios';
 
 export default axios.create({
   baseURL: `http://jsonplaceholder.typicode.com/`
-});
+  withCredentials: true
+})
+
+const errHandler = err => {
+  console.error(err)
+  if (err.response && err.response.data) {
+    console.error("API response", err.response.data)
+  }
+  throw err
+}
+
+export default {
+  service: service,
+
+  // Promise to return all users
+  getUsers() {
+    return service
+      .get('/users')
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
+  // Promise to return 1 user
+  getUser(id) {
+    return service
+      .get('/users/'+id)
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
+  // Promise to create a user
+  addUser(user) {
+    return service
+      .post('/users', user)
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+}
 ```
 
 ```javascript
@@ -1019,13 +1192,15 @@ export default axios.create({
 import api from './api';
 
 // ...
-api.delete(`users/${this.state.id}`)
-  .then(res => {
-    console.log(res);
-    console.log(res.data);
+api.getUser(1)
+  .then(user => {
+    console.log(user);
   })
 // ...
 ```
+
+Some hints when you use an API in a React website:
+- If you want to display some data from an API, generally 
 
 ## Code Examples
 - [React Data Binding (with components A, B, C, D)](https://codesandbox.io/s/p7y3jk8pq0)
