@@ -2,6 +2,7 @@
 
 - [Resources](#resources)
 - [How to use React?](#how-to-use-react)
+- [VS Code extensions for React](#vs-code-extensions-for-react)
 - [Hello React](#hello-react)
 - [JSX](#jsx)
 - [React Components and Props](#react-components-and-props)
