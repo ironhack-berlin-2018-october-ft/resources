@@ -701,8 +701,8 @@ handleChange = (event) => {
 ```js
 // Some code in the render
 
-{/* This input display "this.state.name" and update this value on change  */}
-<input type="text" name="name" value={this.state.name} onChange={this.handleChange} /> 
+{/* This input display "this.state.firstname" and update this value on change  */}
+<input type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} /> 
 
 {/* This textarea display "this.state.occupation" and update this value on change  */}
 <textarea name="occupation" value={this.state.occupation} onChange={this.handleChange} /> 
