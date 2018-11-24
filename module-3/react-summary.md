@@ -3,6 +3,7 @@
 - [Resources](#resources)
 - [How to use React?](#how-to-use-react)
 - [VS Code extensions for React](#vs-code-extensions-for-react)
+- [Import/Export](#import-export)
 - [Hello React](#hello-react)
 - [JSX](#jsx)
 - [React Components and Props](#react-components-and-props)
@@ -105,6 +106,40 @@ export default function Filename() {
     </div>
   )
 }
+```
+
+## Import/Export
+
+```js
+// variables.js
+
+// There is maximum 1 export default
+export default 10
+
+export const a = 1
+export let b = 2
+export function c () {
+  return 3
+}
+```
+
+
+```
+// playground.js
+
+import x, { a, b, c } from "./variables.js";
+
+console.log(x)   // => 10
+console.log(a)   // => 1
+console.log(b)   // => 2
+console.log(c()) // => 3
+
+
+import { a as apple, b as banana, c as carrot } from "./variables.js";
+
+console.log(apple)    // => 1
+console.log(banana)   // => 2
+console.log(carrot()) // => 3
 ```
 
 ## [Hello React](https://reactjs.org/docs/hello-world.html)
