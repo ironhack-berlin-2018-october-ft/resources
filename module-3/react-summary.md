@@ -1205,6 +1205,11 @@ Some hints when you use an API in a React website:
 
 ## Code Examples
 - [React Data Binding (with components A, B, C, D)](https://codesandbox.io/s/p7y3jk8pq0)
+- [Lab corrections and examples](https://github.com/ironhack-berlin-2018-october-ft)
+  - [Bulma Components](https://github.com/ironhack-berlin-2018-october-ft/lab-bulma-components)
+  - [Iron Nutrition](https://github.com/ironhack-berlin-2018-october-ft/lab-react-ironnutrition)
+  - [Wiki Countries](https://github.com/ironhack-berlin-2018-october-ft/lab-wiki-countries)
+  - [IronBeers](https://github.com/ironhack-berlin-2018-october-ft/lab-react-ironbeers)
 
 ## Coming soon
 - Inline styling
