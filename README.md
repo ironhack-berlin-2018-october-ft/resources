@@ -15,13 +15,11 @@ The goal of this page is to share good resources with the class.
 
 
 ### Projects
+- [Projects links](https://docs.google.com/spreadsheets/d/1ik82xwJmrkLMWMQip2Q3yXl3pTu69z5zxHMtPdoXd80/edit?usp=sharing)
 - [Project 1 guidelines](https://docs.google.com/presentation/d/17PPiYmF8CzFx-x980UMPx-jsUJPmTj67HVJWo96OHKg/edit?usp=sharing)
-- [Project 1 list](https://docs.google.com/spreadsheets/d/1ik82xwJmrkLMWMQip2Q3yXl3pTu69z5zxHMtPdoXd80/edit?usp=sharing)
-- **[Project 2 guidelines](https://docs.google.com/presentation/d/1k4ZU5gKLfIsW7dtjnUGYTlqPn37c8YYo_WBDql6L1jA/edit?usp=sharing)**
-- Project 2 list (coming soon)
-- Project 3 guidelines (coming soon)
-- Project 3 list (coming soon)
-
+- [Project 2 guidelines](https://docs.google.com/presentation/d/1k4ZU5gKLfIsW7dtjnUGYTlqPn37c8YYo_WBDql6L1jA/edit?usp=sharing)
+- [Project 3 guidelines](https://drive.google.com/open?id=1m0DG1R7lriyQdI4IlS55GY0Canhma38r3V3kDuvQTo0)
+- [Project 3 Result (with pictures and quotes)](https://docs.google.com/presentation/d/1o0fNqhG6vmu-wXGENsNByz7v1zuiAbLp4x-N1xdPnXw/edit?usp=sharing)
 
 ### Survey
 - [**Weekly Survey**](https://goo.gl/forms/nMvgsTMOGUahZWk42) (To fill every week)
