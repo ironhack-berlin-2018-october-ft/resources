@@ -1241,16 +1241,18 @@ Some hints when you use an API in a React website:
 ## Code Examples
 - [React Data Binding (with components A, B, C, D)](https://codesandbox.io/s/p7y3jk8pq0)
 - [Lab corrections and examples](https://github.com/ironhack-berlin-2018-october-ft)
+  - [React Many Examples](https://github.com/ironhack-berlin-2018-october-ft/react-many-examples)
   - [Bulma Components](https://github.com/ironhack-berlin-2018-october-ft/lab-bulma-components)
+  - [IronContacts](https://github.com/ironhack-berlin-2018-october-ft/lab-react-ironcontacts)
   - [Iron Nutrition](https://github.com/ironhack-berlin-2018-october-ft/lab-react-ironnutrition)
+  - [Thinking in React](https://github.com/ironhack-berlin-2018-october-ft/thinking-in-react)
   - [Wiki Countries](https://github.com/ironhack-berlin-2018-october-ft/lab-wiki-countries)
   - [IronBeers](https://github.com/ironhack-berlin-2018-october-ft/lab-react-ironbeers)
 
-## Coming soon
+## Extra done in class
 - Inline styling
 - Reactstrap (React + Bootstrap)
 - Mapbox and React
 - React and SCSS
-- Maybe Formik
 
 
